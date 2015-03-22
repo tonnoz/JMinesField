@@ -27,7 +27,7 @@ public class MineField{
 	
 	
 	public void neww(String...args){
-		if (args.length > 0){
+		if (args.length == 2){
 			size = BoardSize.valueOf(args[0].toUpperCase());
 			diff = Difficulty.valueOf(args[1].toUpperCase());
 		}
