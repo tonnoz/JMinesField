@@ -10,7 +10,7 @@ The project is still embryonic, whoever wanna help, is welcome.
 TBD f.e.: 
 * graphics
 * responsiveness
-* flagging boxes
 * select size and difficulty
-* improve the reveal procedure
-* victory check
+* show all bombs on death
+
+
