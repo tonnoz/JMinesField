@@ -41,6 +41,10 @@ public class GameController {
 		return MineFieldGenerator.getInstance().getSize();
 	}
 
+	@RequestMapping(value = "/getNrMines.do", method = GET, produces = "application/json")
+	public @ResponseBody int getNrMines(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		return MineFieldGenerator.getInstance().getNrMines();
+	}
 	
 	
 

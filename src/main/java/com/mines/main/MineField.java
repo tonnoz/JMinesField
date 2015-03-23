@@ -9,7 +9,7 @@ public class MineField{
 	private int[][] field;
 	private BoardSize size;
 	private Difficulty diff;
-	
+	private int nrMines = 0;
 	
 	
 	public MineField(){
@@ -31,6 +31,7 @@ public class MineField{
 			size = BoardSize.valueOf(args[0].toUpperCase());
 			diff = Difficulty.valueOf(args[1].toUpperCase());
 		}
+		nrMines = 0;
 		generateMines();
 		setSafeSpots();
 	}
@@ -43,7 +44,9 @@ public class MineField{
 		return size.getSize();
 	}
 	
-
+	public int getNrMines(){
+		return nrMines;
+	}
 	
 	
 	/** PRIVATE **/
@@ -72,7 +75,11 @@ public class MineField{
 	
 	
 	private boolean randBoolByDifficulty(){
-		return (Math.random() * (size.getSize() * diff.getDiff())) < size.getSize();
+		if ((Math.random() * (size.getSize() * diff.getDiff())) < size.getSize()){			
+			nrMines++; return true;
+		}
+		else return false;
+		
 	}
 	
 	
