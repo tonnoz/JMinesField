@@ -6,10 +6,14 @@ function revealBox(i, j) {
     i = parseInt(i);
     j = parseInt(j);
     var k, l;
-    for (k = i - 1; k <= i + 1; k++) {
-        for (l = j - 1; l <= j + 1; l++) {
-            if (k >= 0 && k < size && l >= 0 && l < size && playField[k][l] == 0) {
-                $('input[i="' + k + '"][j="' + l + '"]').css("opacity", "0").attr("disabled", "disabled");
+    for (k = i - 2; k <= i + 2; k++) {
+        for (l = j - 2; l <= j + 2; l++) {
+            if (k >= 0 && k < size && l >= 0 && l < size) {
+            	if (playField[k][l] == 0){
+            		$('input[i="' + k + '"][j="' + l + '"]').css("opacity", "0").attr("disabled", "disabled");
+            	}else if (playField[k][l] != -1){
+            		$('input[i="' + k + '"][j="' + l + '"]').val(playField[k][l]);
+            	}
             }
         }
     }
