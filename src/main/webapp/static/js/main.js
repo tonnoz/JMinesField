@@ -1,11 +1,11 @@
-var field; //matrix of int representing the game board
-var openBoxes; //number of open boxes
-var size; //size of the game board
-var nrMines; //nr of Mines present on the game board
+var field; // matrix of int representing the game board
+var openBoxes; // number of open boxes
+var size; // size of the game board
+var nrMines; // nr of Mines present on the game board
 var nrBoxes; // nr of the boxes still to check
-var nrGuessed; //nr of the guessed boxes
+var nrGuessed; // nr of the guessed boxes
 
-// WIN = nrMines == nrBoxes == nrGuessed
+// WIN =  ( nrMines == nrBoxes == nrGuessed )
 
 $(document).ready(function() {
 	init();
@@ -137,7 +137,13 @@ function reveal(i, j) {
 
 function lose(i, j) {
 	alert("you lose!");
-	$('input[i="' + i + '"][j="' + j + '"]').val('X');
+	for (var i = 0; i < size; i++) {
+		for (var j = 0; j < size; j++) {
+			if (field[i][j] === -1) {
+				$('input[i="' + i + '"][j="' + j + '"]').val('X');
+			}
+		}
+	}
 	$('.gamebuttons').attr("disabled", "disabled");
 }
 
@@ -158,7 +164,7 @@ function changeColor(i, j) {
 }
 
 function checkWin() {
-	if (nrMines === nrBoxes && nrMines === nrGuessed){
+	if (nrMines === nrBoxes && nrMines === nrGuessed) {
 		alert("you win!");
 		$('.gamebuttons').attr("disabled", "disabled");
 	}
