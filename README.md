@@ -13,7 +13,7 @@ The project is still embryonic, whoever wanna help, is welcome.
 - [x] Frontend game
 - [x] Java backend field generation
 - [x] Simple endpoints to interact with the core
-- [ ] show all bombs on death
+- [x] show all bombs on death
 - [ ] select size and difficulty 
 - [ ] responsiveness
 - [ ] improve web view
