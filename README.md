@@ -8,7 +8,7 @@ On the frontend I added some rude Jquery ajax handling; to be improved as well.
 The project is still embryonic, whoever wanna help, is welcome.
 
 
-## Features:
+## Features/TODO:
 
 - [x] Frontend game
 - [x] Java backend field generation
@@ -16,19 +16,11 @@ The project is still embryonic, whoever wanna help, is welcome.
 - [ ] show all bombs on death
 - [ ] select size and difficulty 
 - [ ] responsiveness
+- [ ] improve web view
+- [ ] errors handling
+- [ ] introduce phonegap or similar
 
 ## Install Requirements:
 
 * Java 7
 * Maven (or IDE Maven compatible)
-
-
-## TODO:
-
-* improve web view
-* add error handling
-* use session
-* introduce phonegap or similar
-
-
-
