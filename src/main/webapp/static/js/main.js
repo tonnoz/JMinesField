@@ -30,8 +30,8 @@ $(document).ready(function() {
 });
 
 function openBox(i, j) {
-	if (field[i][j] < 0) {
-		lose(i, j);
+	if (field[i][j] < 0 && openBoxes[i][j] === 0) {
+		lose();
 	} else if (field[i][j] > 0 && openBoxes[i][j] === 0) {
 		reveal(i, j);
 	} else {
@@ -135,7 +135,7 @@ function reveal(i, j) {
 	checkWin();
 }
 
-function lose(i, j) {
+function lose() {
 	alert("you lose!");
 	for (var i = 0; i < size; i++) {
 		for (var j = 0; j < size; j++) {
